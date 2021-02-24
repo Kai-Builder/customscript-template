@@ -1,0 +1,5 @@
+# When Using this directory, You're allowing the require() function to be called.
+# By Passing One parameter into the function, You include files from here.
+# This is essentially the Library root. Files that are shared go in and out of here.
+# To Learn how to do repeated builds, Check Quickfiles.
+#

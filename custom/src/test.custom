@@ -1,0 +1,324 @@
+package customvariabletest
+
+
+
+# As of custom script recent builds, you can now open files and read from one stream
+
+
+# open files('assets/filename.txt', r+) { # Do what you want with filename.txt }
+
+
+# The Send Keyword Contains all Buffer I\O Objects.
+
+*
+The file class is inherited by:
+
+- open file(<file>, <mode>) { <action> }
+- open Keyword functions
+- func files
+- system buffer(file)
+
+it is used as a file buffer stream for users to gather data from files.
+
+
+There are other ways to get file Buffers.
+
+func file() {
+    echo buffer > customvariabletest.txt
+}
+
+
+open file('assets/test.txt', w) {
+
+    Some Stuff about file
+
+}
+
+--------------------------- C L A S S D E F ------------------------------------------
+
+Classdef Inherits from The File Class and is a part of customscript v5.0 Rewrite.
+
+You can use classdef with the current binary you have been given in this template.
+
+A Classdef File has the extension .cClass
+
+The Full things Can be found in packages/rewrite.csr
+*
+module stringtools = require('string.csr')
+
+*
+
+-------------------------- I T E R A T O R S ------------------------------
+
+For loops are concatenated by the IsStringBoolToArray Utility.
+
+For loops allow for strings to turn into arrays, then return true If it works.
+
+Example
+
+IsStringBoolToArray -> string
+
+string -> array version
+
+av -> letters
+
+if letters -> char in for do { <statement> }
+
+
+---------------------------- I O S T R E A M -----------------------------------
+
+The IOSTREAM variable is a one stream operator which stands for the input stream. It is a one variable and only changes once input get() is called.
+
+--------------------------- F O R I T E R --------------------------------------
+for (i in "hiiiiiiiiiii") do {
+echo Works
+}
+^
+Returns :
+Works
+Works
+Works
+Works
+Works
+Works
+Works
+Works
+
+-------------------------- R A W I F I T E R ------------------------------------
+
+the raw if iter is deprecated and soon to be replaced with the doif() function.
+
+the raw if iterator is expected two values.
+
+if (x == x) do {statement}
+
+The reason it will become removed is because it only has a one sided intake. Meaning it will do the statement until it returns false.
+Same goes for the for Statement. The if statement will soon use a utility called the CheckIfThenDo Loop Instead of the current, LiteralComparison.
+
+-------------------------- I N H E R I T E N C E ---------------------------------
+
+Inheritance Can be found in many different keywords & Placements.
+
+Here are some of the Inheritable classes as of 2/24.
+
+- File (Stream)
+- IOSTREAM (Buffer)
+- FileBuf (Buffer)
+- IoStream (stream)
+- Classdef (Utility Buffer) (Stream Class) (Definition)
+
+--------------------------- U T I L I T Y ------------------------------------------
+
+Utilities are what CustomScript Uses to create certain parts of the language.
+
+Here are some of the Utilities that are used currently
+
+KEYWORD             UTILITY         DEPRECATED?
+
+if               LiteralComparison     true
+
+for             IsStringBoolToArray     false
+
+while           LiteralComparison       true
+
+open            Fisher                  false
+
+module          Fisher                  false
+
+doif            CheckIfThenDo           false
+
+keyboard        FuncDef                 false
+
+function        Prototyper              true
+
+func            FlyCode                 true
+
+bash            Winapi                  true
+
+#               Commenter               false
+
+set             Setter                  true
+
+statement       Manager                 true
+
+fire            EventHandler            true
+
+pack            FileSystem              false
+
+w               Modes                   false
+
+r+              Modes                   false
+
+ISender         MacroHandler            true
+
+Here are some of the Deprecated Utility replacements
+
+
+KEYWORD         OLD                       NEW
+
+if        LiteralComparison           CheckIfThenDo
+
+bash           Winapi                  CustomDevEnv
+
+set           Setter                  CustomDevEnv.Parser
+
+fire          EventHandler            EventManager
+
+ISender       Macro                   Accountant
+
+pack          FileSystem              Fisher
+
+statement     Manager               Evaluator
+
+func          FlyCode                Evaluator.FlyCode.Analysis
+
+function       Prototyper           Evaluator.JSON
+
+while         LiteralComparison     WhileIfDoThis
+
+
+--------------------- U T I L I T Y S F O R S T A R T E R S ----------------------------------
+
+Utilities are great ways to contribute to the development of CustomScript, You could even make your own CustomScript Utility Right Now!
+CustomScript's Built-in Feature rich API Allows users to build seamless modules without much effort.
+
+A Good Utility would be LiteralComparison, Written by Kai-Builder: Was made to Ease development Of IF statements within your code.
+With the rising growth of CustomScript, Users would need to rewrite Their scripts for every version, In with the new, Out with the old.
+
+Most Utilities are shared between keywords, And some keywords have their own custom utilities.
+
+To make your own utility, Scroll down to the MAKING A UTILITY Category.
+
+----------------------- M E M O R Y   H A N D L I N G ----------------------------------------
+
+Memory does not come pre-dumped or pre-allocated for the most part, some of it must be allocated by you. If you would like to use a stream of IO
+Without any Input to give, Your program freezes and crashes.
+
+This doesn't mean you have to be a "C" or "C++" Geek, It just means you need to make sense as you write your code.
+
+------------------------  M A K I N G   A   U T I L I T Y  ------------------------------------
+
+Utilities are very useful in creating scripts with CustomScript.
+Utilities/Modules are packaged at runtime and contain a:
+
+- Compiler Directive
+- Name
+- JSON
+- Description
+- URL
+- Author
+- C++
+- CustomScript Code
+
+Utilities are a way to customize your CustomScript experience.
+
+Open a C++ Script and Type:
+
+#include <CustomScript.hpp>
+
+customparser p;
+p.file = "myfile.custom // myfile.csr";
+// Call The Parser.On Object To Symbolize A Parser coming into contact with a object that should be dealt with.
+void p.on(CustomObject& Object) {
+    print(Object.name); // If the first keyword of your script is send, Will return send.
+}
+
+This script Calls The CustomParser Type, Then overrides the .on() Function that indicates the Parser Reading a keyword from any files.
+
+You could then do something like:
+
+void p.on(CustomObject& Object) {
+    print(Object.out); // If Object is var, Will Print: ERROR: Var Declaration requires 1 Missing argument.
+}
+
+Next, You should Define some Preprocessor Definitions that the compiler will read.
+
+#define UTIL_NAME "Your Utility's name"
+#define UTIL_DESC "Description"
+#define UTIL_TYPE "Type of Utility"
+#define CLI "None"
+
+
+p.name = UTIL_NAME;
+p.desc = UTIL_DESC;
+p.type = UTIL_TYPE;
+p.args = CLI;
+
+When you do that, Make another function called on_ready.
+
+
+CSEvent p.on_ready() {
+    print("Loaded!");
+}
+This checks if your Utility is ready.
+
+Next, Create a ENUM Called DIRECT
+
+enum DIRECT {
+    IN,
+    OUT,
+    CUSTOM_PARSE,
+    UTIL,
+    UTILITY,
+    BASIC,
+    PARSER,
+    OPEN,
+    CLOSE,
+    NUM,
+    SIGN,
+    UTIL_NAME
+};
+
+Then, Create a Function called on_util_called
+
+CSEvent p.on_util_called() {
+    print("My Utility was called!");
+}
+
+After, Load up a Secret Utility Called CIOS Mode. You can do this by loading up CustomScript.exe With the Argument, --CIOS Mode instead of
+A file.
+
+After, To setup a developer environment, Type env.
+
+C:Users\You\Path\to\Custom.exe> CustomScript.exe --CIOS
+
+You are in CIOS Mode. What would you like to do?
+
+> Install Modules (install)
+> Set up a Developer Environment (env OR devenv)
+> Set up a Development Server (senv)
+> Add a CustomScript Boilerplate to your project (bplate)
+
+~$ env
+
+Setting Up your environment...
+
+Cloning into 'customscript-dev-env'...
+
+Username for 'https://github.com': Kai-Builder
+Password for 'https://Kai-Builder@github.com':
+remote: Enumerating objects: 161, done.
+remote: Counting objects: 100% (161/161), done.
+remote: Compressing objects: 100% (120/120), done.
+remote: Total 161 (delta 54), reused 125 (delta 29), pack-reused 0
+Receiving objects: 100% (161/161), 14.14 MiB | 14.03 MiB/s, done.
+Resolving deltas: 100% (54/54), done.
+
+Done! To run your environment, Run the env.csr file.
+
+-----
+
+Done! You've officially set up a developer environment to start creating your Utility!
+
+API Reference:
+
+CSEvent - Fires every time a Event happens
+
+on(CustomObject) - Fires every time the parser Comes into contact with a keyword
+
+on_ready() - Fires once your utility is ready to be used.
+
+--------------------------------------------------------------------------------------------------------------------
+
+That's basically all of the docs! Have fun coding With CustomScript!
+*

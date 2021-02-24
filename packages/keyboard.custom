@@ -1,0 +1,64 @@
+*
+Include Main Modules
+*
+module keyboardHooker = require('keyboard.custom')
+module rewrite = require('rewrite.csr')
+module super = require('super.custom')
+*
+keyboard.custom Module
+
+Allows keyboard Input to be Added In & Out of Your application.
+*
+func pass(key) {
+    echo Hello, This Is keyboard module. This allows Keyboard input to be threaded through simple C code.
+}
+open file('build.csbuild', w) {
+    // This CSBUILD Is Super Simple to make
+    // It allows The Keyboard Module to write data and store it.
+}
+
+open file('keyboard.k', w) {}
+
+func get_input() {
+    echo Ignored.
+}
+*
+    Add some basic implementation of the keyboard Class
+
+    Most Key Functions inherit Keyboard As a class.
+*
+classdef Keyboard {
+    KEY_IN,
+    KEY_OUT,
+    function doif();
+    function iftouched();
+    function onrelease();
+    function send();
+    function virtual();
+}
+
+classdef VirtualSender {
+    KEY_IN,
+    KEY_OUT,
+    function send();
+    function recieve();
+    var sender = ISender,
+    function VirtualShader();
+    function fix();
+}
+
+func write(args) {
+    echo KeyBoard module Works! > log.log
+}
+
+*
+
+    T E S T
+
+
+    send println('test. Hit a')
+
+    Keyboard doif('a') {
+       It must've Worked!
+    }
+*

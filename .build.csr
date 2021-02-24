@@ -1,0 +1,19 @@
+package build.csr
+
+var build = 'custom\\src'
+
+if (build == build) {
+    @echo off
+}
+
+# Bash Run Command
+bash send run(Sender, args) pack {
+    echo Running Custom Build
+}
+
+bash send compile(ISender, args) pack {
+    echo Running ${build}
+}
+
+
+

@@ -1,0 +1,19 @@
+*
+
+---------------------------- S O U R C E M A K E R ----------------------------------------
+
+
+Sourcemaker Is a utility That helps with project making for CustomScript Source files.
+
+By using raw file buffers, you can make a project simply.
+
+This Module can be Included, Or Pasted into source code.
+
+*
+
+open file('config.properties', w) {
+    config=true
+    basic=iter
+    source=.src.csr
+}
+

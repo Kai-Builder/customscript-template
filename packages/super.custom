@@ -1,0 +1,19 @@
+*
+Super Module
+KaiBuilder 2019
+*
+classdef super { function super_init(); }
+
+function write(args)
+function read(args)
+function super_init(args);
+
+func write(args) {
+    echo args > file
+}
+
+func read(args) { return 0 }
+
+open super_log('super@main/logs/log.log', w) {
+    [WORK] Super Works.
+}

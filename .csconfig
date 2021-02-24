@@ -1,0 +1,15 @@
+config:
+  v: 5.0
+  modules: packages
+  super: super@main
+  list:
+    super: super@main
+    keyboard: keyboard.custom
+    sourcehelper: sourcemaker@main
+    ignore:
+      ignored: .cignore
+    rewrite: rewrite.csr
+
+post-init:
+  compiler: CustomScript
+

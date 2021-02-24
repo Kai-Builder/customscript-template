@@ -1,0 +1,36 @@
+*
+Rewrite.csr
+
+Version 1.0
+
+--------------------------- R E A D M E -------------------------------
+
+Rewrite of the Current CustomScript Data Handlers.
+*
+
+package build.rewrite.csr
+
+
+func build(args) {
+    echo Alright, Starting the build
+}
+
+send println('You have just opened the REWRITE.csr File. This file is meant to be Included in your projects.')
+
+send println('to continue, Press ENTER.')
+
+
+classdef CLASSDEF {
+    ORIGIN,
+    UTILS,
+    CLASS
+}
+
+classdef MOD {
+    MODULE,
+    UTILS,
+    FIN,
+    DONE,
+    STATUS,
+    NULL
+}
